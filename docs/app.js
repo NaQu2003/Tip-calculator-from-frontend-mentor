@@ -130,8 +130,8 @@ function calc(){
         const sumInputValue = Number(sumInput.value)
         const numberofPeople = peopleInput.value
         tipTotal = Math.round((sumInputValue * 100 *tipPercent))/100
-        const TipPerPerson = Math.round((tipTotal * 100)/numberofPeople)/ 100
-        const totalSumPerPerson = Math.round(((tipTotal * 100) + sumInputValue*100)/numberofPeople)/100 
+        const TipPerPerson = Math.floor((tipTotal * 100)/numberofPeople)/ 100
+        const totalSumPerPerson = Math.floor(((tipTotal * 100) + sumInputValue*100)/numberofPeople)/100 
         
         const formattedTipString = String(TipPerPerson)
         const formattedTotalString = String(totalSumPerPerson) 
