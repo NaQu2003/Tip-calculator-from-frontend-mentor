@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="substyles.css">
+</head>
+<!-- --Strong-cyan: hsl(172,67%,45%);
+--Very-dark-cyan: hsl(183,100%,15%);
+--Dark-grayish-cyan: hsl(186,14%,43%);
+--Grayish-cyan: hsl(184,14%,56%);
+--Light-grayish-cyan: hsl(185,41%,84%);
+--Very-light-grayish-cyan: hsl(189,41%,97%);
+--White: hsl(0,0%,100%); -->
+<!-- class="logo absolute top-[155px] right-0 left-0 m-auto" -->
+<body class="bg-[hsl(185,41%,84%)] min-h-screen flex items-center justify-center flex-col">
+
+    <header class="mb-[90px] mt-[50px]">
+      <img src="images/logo.svg" alt="Spliter Company logo" >
+    </header>
+  <main class="bg-[rgb(255,255,255)] md:p-8 rounded-[16px] p-4 md:pl-[3em] md:flex md:max-w-[910px] md:mb-[185px]" style>
+    <div class="top-side md:w-[50%] lg:mr-[2.625em] md:mr-[1em] md:mt-3">
+        <form id="form">
+
+          <div class="top-part flex flex-col relative mb-[42px] md:mb-[50px]">
+              <label for="sum-input" class="flex justify-between text-[hsl(184,14%,56%)] text-[1rem] mb-[10px]"><span>Bill</span><span class="error-js text-red-400 hidden">error</span></label>
+              <input class="hover:border-[rgb(97,170,161)] transition-all rounded-lg w-full text-[24px] outline-none min-w-0 w-full block h-12 text-right text-[24px] pr-5 pl-10 bg-[hsl(189,41%,97%)] cursor-pointer border-2 border-[hsl(0,0%,100%)]"type="text" id="sum-input" placeholder="0">
+              <img class="absolute top-[50px] left-[20px]"src="images/icon-dollar.svg" alt="dolar-icon">
+          </div>
+
+          <div class="middle-part mb-[36px]">
+            <label class="flex justify-between mb-[12px] md:mb-[16px] block text-[hsl(184,14%,56%)]"><span>Select Tip %</span> <span class="error-js text-red-400 hidden">Error</span> </label>
+            <div class="grid grid-cols-2 gap-3 md:grid-cols-3">
+              
+            <label class="radio-label hover:bg-[rgb(159,232,223)] transition-all rounded-lg cursor-pointer bg-[hsl(183,100%,15%)] text-[hsl(0,0%,100%)] text-2xl text-center leading-[45px] h-12" tabindex="0" for="TipPercentRadio5">5%</label>
+            <input class="hidden"type="radio" name="tipPercent" id="TipPercentRadio5">
+
+            <label tabindex="0" class="radio-label hover:bg-[rgb(159,232,223)] transition-all rounded-lg cursor-pointer bg-[hsl(183,100%,15%)] text-[hsl(0,0%,100%)] text-2xl text-center leading-[45px] h-12" for="TipPercentRadio10">10%</label>
+            <input class="hidden" type="radio" name="tipPercent" id="TipPercentRadio10">
+
+            <label tabindex="0" class= "radio-label hover:bg-[rgb(159,232,223)] transition-all rounded-lg cursor-pointer bg-[hsl(183,100%,15%)] text-[hsl(0,0%,100%)] text-2xl text-center leading-[45px] h-12" for="TipPercentRadio15">15%</label>
+            <input class="hidden" type="radio" name="tipPercent" id="TipPercentRadio15">
+
+            <label tabindex="0" class="radio-label hover:bg-[rgb(159,232,223)] transition-all rounded-lg cursor-pointer bg-[hsl(183,100%,15%)] text-[hsl(0,0%,100%)] text-2xl text-center leading-[45px] h-12" for="TipPercentRadio25">25%</label>
+            <input class="hidden" type="radio" name="tipPercent" id="TipPercentRadio25">
+
+            <label tabindex="0" class="radio-label hover:bg-[rgb(159,232,223)] transition-all rounded-lg cursor-pointer bg-[hsl(183,100%,15%)] text-[hsl(0,0%,100%)] text-2xl text-center leading-[45px] h-12" for="TipPercentRadio50">50%</label>
+            <input class="hidden" type="radio" name="tipPercent" id="TipPercentRadio50">
+            
+            <input class="rounded-lg cursor-pointer h-12 bg-[hsl(189,41%,97%)] text-[24px] pr-[13px] pl-[42px] outline-none text-right md:pl-[16px] border-[2px] border-[hsl(0,0%,100%)] hover:border-[rgb(97,170,161)] transition-all min-w-0 w-full" name="tipPercent"type="number"id="TipPercentInput" placeholder="Custom">
+            <input class="hidden"type="submit">
+          </div>
+          </div>
+
+          <div class="bottom-part flex flex-col relative mb-[42px] cursor-pointer">
+            <label class="mb-[10px] text-[hsl(184,14%,56%)]  justify-between flex" for="people-input"><span>Number of people</span> <span class="hidden error-js text-red-400">error</span></label>
+            <input class="min-w-0 w-full hover:border-[rgb(97,170,161)] transition-all rounded-lg border-2 border-[hsl(0,0%,100%)] cursor-pointer block bg-[hsl(189,41%,97%)]  h-12 text-[24px]  text-right outline-none pr-4 pl-[42px]"type="number" name="allPeople" id="people-input" placeholder="0">
+            <img class="w-4 absolute top-[50px] left-[20px]"src="images/icon-person.svg" alt="icon of person">
+          </div>
+
+        </form>
+    </div>
+    <div class="bottom-side bg-[hsl(183,100%,15%)] rounded-[16px] p-[32px] md:w-[50%] max-h-[415px] ">
+        <div class="Tip-Amount flex w-full justify-between items-center md:mb-[48px]">
+            <div class="left-side">
+              <p class="">
+                <span class="text-[hsl(0,100%,100%)]">
+                  Tip Amount
+                </span>
+                <br>
+                <span class="text-[rgb(88,143,148)]">
+                  /Person
+                </span>
+              </p>
+            </div>
+            <div class="right-side">
+              <p class="tipTotal-amount-js text-[hsl(172,67%,45%)] text-[32px] md:text-[48px]">&dollar;00.00</p>
+            </div>
+        </div>
+        <div class="Total flex w-full justify-between items-center mb-9 md:mb-[100px]">
+            <div class="left-side">
+                <p>
+                  <span class="text-[hsl(0,100%,100%)]">
+                   Total
+                  </span>
+                  <br>
+                  <span class="text-[rgb(88,143,148)]">
+                    /Person
+                  </span>
+                </p>
+              </div>
+              <div class="right-side">
+                <p class="total-per-person-js text-[hsl(172,67%,45%)] text-[32px] md:text-[48px]">$00.00</p>
+              </div>
+        </div>
+        <button class="submit hover:bg-[rgb(159,232,223)] transition-all
+        bg-[rgb(13,104,109)] outline-none h-12 w-full rounded-lg text-[hsl(183,100%,15%)] uppercase text-2xl
+        ">Reset</button>
+    </div>
+    
+  </main>
+  <script src="app.js"></script>
+
+
+</body>
+</html>
